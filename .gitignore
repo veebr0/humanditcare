@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+#Enviroment Vars Files
+*.env
+
+
+#Directories
+staticfiles/
+mediafiles/
+
+#Docker Files ignored
+DockerFile
+#the folder bwllow is the docker db data
+db-data/
+.dockerignore
+*.yml
+
+
+#Visual Studio Configuration
+.vscode/
