@@ -72,9 +72,10 @@ class Prototype():
             boat.north += value * waypoint.north
 
             if len(self.start_point) == 0:  # check if dict is empty
+                print(waypoint.north, waypoint.east)
                 self.start_point = {
-                    'x1':  boat.east,
-                    'y1': boat.north
+                    'x1': waypoint.east,
+                    'y1': waypoint.north
                 }
 
         elif action == 'F' and self.direction != waypoint.direction:
@@ -141,9 +142,8 @@ a = (10, 0)
 b = (17, 11)
 print('Manhattan distance for task 1', get_manhattan(a, b))
 
-'''
-To resolved the manhattan distances in task 1
-I just send two vectors. 
+''' 
+to get the second answer
 '''
 a = (boat.start_point['x1'], boat.start_point['y1'])
 b = (boat.east, boat.south)
