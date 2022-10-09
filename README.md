@@ -1,38 +1,42 @@
 # HumandITcare - Technical solutions
 
-## Coding task
-### Define Zeroes, 
+## Show-off
+take a look into the directory named showof, here you will find 3 files:
 
-
-
-
-## Ship navigation - Part One:
-**Question:** Figure out where the navigation instructions lead. What is the Manhattan distance between that location and the ship's starting position?
-
-**Answer:** Checking with a detail of instructions the navigation computer do not really have a problem, the problem come when the sequence of commands are not correct, check details bellow:
-
-`F10->` Will move the ship 10 units east | resume : boat is at east 10,  north 0. - (good)
-
-`N3->`  Will move the ship 3 units to north - (error)
-
-**Error:** appear the ship is moved 3 units to north , leaving the boat in a position to east 10, north 3, but this is impossible because the boat is still facing to east.
-
-The correct way to turn left the ship is using the command L90 and after F3 so this means that the boat will keep in east 10, north 0.
-
-**Next commands**
-
-`F7->` will move the ship another 7 units east (because the ship is still facing east) to east 17, north 3.
-
-`R90->` will cause the ship to turn right by 90 degrees and face south; it remains at east 17, north 0.
-
-`F11->` will move the ship 11 units south to east 17, south 11.
-
-`Calculation: 17 + 11 = 28`
-
-**Vectors:**
+- fields.py: In this file is where the magic happens, two new classes add new features to Django model fields.
 ```python
-a = (10, 0)
-b = (17, 11)
+class EncryptedEmailField (models.EmailField): 
+    
+class EncryptedCharField (models.CharField):
+```
+- encrypt.py, is a file that contains 2 important functions to encrypt and dencrypt.
+```python
+def encrypt(txt, unique=False)
+def decrypt(txt, unique=False, fromdb=False)
+```
+- models.py, is just to show how you can implement the `EncryptedEmailField` and `EncryptedCharField` features into a model definition.
+
+## Coding task
+### Define Zeroes
+The code for this task you will find it on directory **task_1**, this directory contains a file named: **first.py**
+
+
+## Ship navigation - Part One / Part Two:
+The code for this task you will find on directory **task_2**, this directory contains a file named: **second.py**
+
+`note:` If you run this code you will get the following answers:
+
+```python
+ommand:F10| boat N10, S0, E100, W0, direcction=E
+Command:N3| waypoint N4, S0, E10, W0, direcction=E
+Command:F7| boat N38, S0, E170, W0, direcction=E
+Command:R9| waypoint N0, S10, E4, W0, direcction=S
+Command:F11| boat N0, S72, E214, W0, direcction=S
+boat start point - x1: 10 | y1: 1
+boat end   point - x2: 214 | y2: 72
+Manhattan distance for task 1 = 18
+Manhattan distance for task 2 = 275
 ```
 
-`The correct Manhattan distance: 18`
+## Last important things:
+- Be aware that I used Python 3.10.4, and it has not been tested on higher versions.

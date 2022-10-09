@@ -14,7 +14,7 @@ backend = default_backend()
 
 def encrypt(txt, unique=False):
     try:
-        # convert integer an special characters etc to string first
+        # convert int an special characters etc to string first
         txt = GetValidText(str(txt))
         # txt = str ( txt )
 

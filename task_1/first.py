@@ -10,8 +10,8 @@ def get_expansion(num):
     # split_values represent two lists, means split_values[0] and  split_values[1]
     # split_values[0] represent the integer part and split_values[1] represent all after .
     split_values = str(num).split('.')
-    values = list(str(num))  # here convert the number to a list of values
-    # to define the real len just need the int part  -1
+    values = list(str(num))  # here converts the number to a list of values
+    # to define the real len,  just needs the int part -1
     exp = len(split_values[0]) - 1
     expansion = 0
 
@@ -51,7 +51,7 @@ def zero_special(n):
 
 '''
 Nota : test_zero_special is a recursive function just for test some random numbers 
-The following part contain a fuction just to do a test to zero_special
+The following part contains a function just to do a test to zero_special
 here just I use the magic of recursion, jejejejeje
 '''
 
@@ -73,5 +73,5 @@ def test_zero_special(n, accumulated_number):
 
 
 # Calling the recursive function for a test
-# test_zero_special function need to start with two inital values
+# test_zero_special function need to start with two initial values
 test_zero_special(100, 0)

@@ -4,12 +4,12 @@ import re
 
 # some  ways to calculate  Manhattan distances
 
-# Elegand mode jejejejejejejj ,just received two vectors
+# Elegant mode jejejejejejej, just received two vectors
 def get_manhattan(a, b):
     return sum(abs(val1-val2) for val1, val2 in zip(a, b))
 
 
-# more complicate
+# more complicated
 def get_manhattan2(x1, y1, x2, y2):
     distance = (x2-x1) + (y2-y1)
     return distance
@@ -21,10 +21,9 @@ def get_option(x):
     value = res[1]
     return [action, value]
 
-# panel is na fucntion that you can send a value or run empty
-# if you send a value this process the object that need an action
 
-
+# panel is a function that you can send a value or run empty
+# if you send a value this process the action
 def panel(value=""):
 
     actions = ['N', 'S', 'E', 'W', 'L', 'R', 'F']
@@ -72,7 +71,6 @@ class Prototype():
             boat.north += value * waypoint.north
 
             if len(self.start_point) == 0:  # check if dict is empty
-                print(waypoint.north, waypoint.east)
                 self.start_point = {
                     'x1': waypoint.east,
                     'y1': waypoint.north
@@ -100,33 +98,33 @@ class Prototype():
 
 # waypoint and boat initialization
 # north, south, east, west
-waypoint = Prototype(1, 0, 10, 0, 'E')  # Initialitation of waypoint
-boat = Prototype(0, 0, 0, 0, 'E')  # Initialitation of boat
+waypoint = Prototype(1, 0, 10, 0, 'E')  # Initialization of waypoint
+boat = Prototype(0, 0, 0, 0, 'E')  # Initialization of boat
 
 
 '''
-The bellow lines just are a representative of the exercice 2
+The bellow lines just are a representative of the task 2
 '''
 panel('F10')
-print('boat F10',
+print('Command:F10| boat',
       f'N{boat.north}, S{boat.south}, E{boat.east}, W{boat.west}, direcction={boat.direction}')
 
 panel('N3')
-print('waypoint N3',
+print('Command:N3| waypoint',
       f'N{waypoint.north}, S{waypoint.south}, E{waypoint.east}, W{waypoint.west}, direcction={waypoint.direction}')
 
 
 panel('F7')
-print('boat  F7',
+print('Command:F7| boat',
       f'N{boat.north}, S{boat.south}, E{boat.east}, W{boat.west}, direcction={boat.direction}')
 
 panel('R90')
-print('waypoint R90',
+print('Command:R9| waypoint',
       f'N{waypoint.north}, S{waypoint.south}, E{waypoint.east}, W{waypoint.west}, direcction={waypoint.direction}')
 
 
 panel('F11')
-print('boat  F11',
+print('Command:F11| boat',
       f'N{boat.north}, S{boat.south}, E{boat.east}, W{boat.west}, direcction={boat.direction}')
 print(
     f"boat start point - x1: {boat.start_point['x1']} | y1: {boat.start_point['y1']}")
@@ -140,11 +138,11 @@ I just send two vectors.
 a = (10, 0)
 # b = (17, 8) wrong calculation
 b = (17, 11)
-print('Manhattan distance for task 1', get_manhattan(a, b))
+print('Manhattan distance for task 1 =', get_manhattan(a, b))
 
 ''' 
 to get the second answer
 '''
 a = (boat.start_point['x1'], boat.start_point['y1'])
 b = (boat.east, boat.south)
-print('Manhattan distance for task 2', get_manhattan(a, b))
+print('Manhattan distance for task 2 =', get_manhattan(a, b))
